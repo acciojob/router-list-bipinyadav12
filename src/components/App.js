@@ -43,7 +43,7 @@ function ItemDetail() {
   return (
     <div>
       <h1>{item.name}</h1>
-      <p>{item.description}</p>
+       <p>{`Description for Item ${item.id}`}</p>
       <Link to="/">Back to Item List</Link>
     </div>
   );
