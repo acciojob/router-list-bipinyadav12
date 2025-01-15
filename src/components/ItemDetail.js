@@ -13,16 +13,11 @@ function ItemDetail() {
       ];
     const { id } = useParams();
     const item = items.find((item) => item.id === id);
-  
-    if (!item) {
-      return <h2>Item not found</h2>;
-    }
-  
+
     return (
       <div>
         <h1>{item.name}</h1>
         <p>{item.description}</p>
-      
       </div>
     );
   }
