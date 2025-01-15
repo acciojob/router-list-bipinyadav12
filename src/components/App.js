@@ -44,7 +44,6 @@ function ItemDetail() {
     <div>
       <h1>{item.name}</h1>
        <p>{item.description}</p>
-      <Link to="/">Back to Item List</Link>
     </div>
   );
 }
