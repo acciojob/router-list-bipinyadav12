@@ -1,4 +1,4 @@
-// Import necessary dependencies
+
 import React from "react";
 import {
   BrowserRouter as Router,
