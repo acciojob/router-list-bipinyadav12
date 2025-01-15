@@ -2,7 +2,7 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Routes,
+  Switch,
   Route,
   Link,
   useParams
@@ -53,10 +53,10 @@ function ItemDetail() {
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<ItemList />} />
-        <Route path="/items/:id" element={<ItemDetail />} />
-      </Routes>
+      <Switch>
+        <Route path="/" component ={ItemList} />
+        <Route path="/items/:id" component ={ItemDetail} />
+      </Switch>
     </Router>
   );
 }
