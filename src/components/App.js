@@ -10,9 +10,9 @@ import {
 
 // Sample data for items
 const items = [
-  { id: "1", name: "Item 1", description: "This is the description for Item 1." },
-  { id: "2", name: "Item 2", description: "This is the description for Item 2." },
-  { id: "3", name: "Item 3", description: "This is the description for Item 3." },
+  { id: "1", name: "Item 1", description: "Description for Item 1" },
+  { id: "2", name: "Item 2", description: "Description for Item 2" },
+  { id: "3", name: "Item 3", description: "Description for Item 3" },
 ];
 
 // Component to display the list of items
@@ -43,7 +43,7 @@ function ItemDetail() {
   return (
     <div>
       <h1>{item.name}</h1>
-       <p>{`Description for Item ${item.id}`}</p>
+       <p>{item.description}</p>
       <Link to="/">Back to Item List</Link>
     </div>
   );
