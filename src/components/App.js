@@ -23,7 +23,7 @@ function ItemList() {
       <ul>
         {items.map((item) => (
           <li key={item.id}>
-            <Link to={`/items/${item.id}`}>{item.name}</Link>
+            <h1><Link to={`/items/${item.id}`}>{item.name}</Link></h1> 
           </li>
         ))}
       </ul>
