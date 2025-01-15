@@ -7,7 +7,7 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-
+import ItemDetail from "./ItemDetail";
 // Sample data for items
 const items = [
   { id: "1", name: "Item 1", description: "Description for Item 1" },
@@ -15,7 +15,7 @@ const items = [
   { id: "3", name: "Item 3", description: "Description for Item 3" },
 ];
 
-// Component to display the list of items
+
 function ItemList() {
   return (
     <div>
@@ -32,23 +32,7 @@ function ItemList() {
 }
 
 // Component to display details of a specific item
-function ItemDetail() {
-  const { id } = useParams();
-  const item = items.find((item) => item.id === id);
 
-  if (!item) {
-    return <h2>Item not found</h2>;
-  }
-
-  return (
-    <div>
-      <h1>{item.name}</h1>
-       <p>{item.description}</p>
-    </div>
-  );
-}
-
-// Main App component
 function App() {
   return (
     <Router>
