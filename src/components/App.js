@@ -1,13 +1,64 @@
-
+// Import necessary dependencies
 import React from "react";
-import './../styles/App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 
-const App = () => {
+// Sample data for items
+const items = [
+  { id: "1", name: "Item 1", description: "This is the description for Item 1." },
+  { id: "2", name: "Item 2", description: "This is the description for Item 2." },
+  { id: "3", name: "Item 3", description: "This is the description for Item 3." },
+];
+
+// Component to display the list of items
+function ItemList() {
   return (
     <div>
-        {/* Do not remove the main div */}
+      <h1>Item List</h1>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>
+            <Link to={`/items/${item.id}`}>{item.name}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 
-export default App
+// Component to display details of a specific item
+function ItemDetail() {
+  const { id } = useParams();
+  const item = items.find((item) => item.id === id);
+
+  if (!item) {
+    return <h2>Item not found</h2>;
+  }
+
+  return (
+    <div>
+      <h1>{item.name}</h1>
+      <p>{item.description}</p>
+      <Link to="/">Back to Item List</Link>
+    </div>
+  );
+}
+
+// Main App component
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<ItemList />} />
+        <Route path="/items/:id" element={<ItemDetail />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
